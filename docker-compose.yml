@@ -1,0 +1,16 @@
+services:
+  polygon-backend:
+    build: .
+    container_name: polygon-manager
+    ports:
+      - "8080:8080"
+    volumes:
+      - polygon-data:/app/data
+    environment:
+      - LOG_LEVEL=INFO
+      - DATABASE_URL=sqlite:///./data/polygon.db
+    restart: unless-stopped
+
+volumes:
+  polygon-data:
+    driver: local

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polygon Manager</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Polygon Manager</h1>
+        </header>
+
+        <div class="main-content">
+            <div class="canvas-section">
+                <div class="canvas-controls">
+                    <input type="text" id="polygonName" placeholder="Enter polygon name" />
+                    <button id="startDrawing" class="btn btn-primary">Start Drawing</button>
+                    <button id="finishPolygon" class="btn btn-success" disabled>Finish Polygon</button>
+                    <button id="cancelDrawing" class="btn btn-danger" disabled>Cancel</button>
+                    <button id="clearCanvas" class="btn btn-warning">Clear Canvas</button>
+                </div>
+
+                <div class="canvas-wrapper">
+                    <canvas id="polygonCanvas" width="1920" height="1080"></canvas>
+                    <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Loading...</p>
+                    </div>
+                </div>
+
+                <div class="instructions">
+                    <h3>Instructions:</h3>
+                    <ul>
+                        <li>Enter a name for your polygon</li>
+                        <li>Click "Start Drawing" and click on the canvas to add points</li>
+                        <li>Click "Finish Polygon" when done (minimum 3 points)</li>
+                        <li>Click on existing polygons in the list to highlight them</li>
+                        <li>Use the delete button to remove polygons</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="polygon-list-section">
+                <h2>Polygons List</h2>
+                <div id="polygonList" class="polygon-list">
+                    <p class="no-polygons">No polygons created yet</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
